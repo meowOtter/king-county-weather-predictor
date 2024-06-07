@@ -2,6 +2,8 @@
 
 Welcome to the King County Weather Predictor project! This application predicts the minimum, maximum, and average temperatures based on user input for a specific date in King County, Washington. The application leverages machine learning and data analysis to provide accurate predictions.
 
+![image](https://github.com/meowOtter/king-county-weather-predictor/assets/151581090/6e2090d6-25ba-46e8-984e-3aa20764163f)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
