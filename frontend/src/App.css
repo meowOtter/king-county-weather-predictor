@@ -1,0 +1,91 @@
+.weather-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: url("weather.jpeg") no-repeat center center fixed;
+	background-size: cover;
+	padding: 20px;
+	font-family: Arial, sans-serif;
+	color: #333;
+	text-shadow: 1px 1px 2px #fff;
+}
+
+.title {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 10px 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.weather-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weather-input,
+.weather-submit {
+	padding: 10px;
+	margin: 10px;
+	border: 2px solid #007bff;
+	border-radius: 20px;
+	font-size: 16px;
+}
+
+.weather-input {
+	width: 250px;
+}
+
+.weather-submit {
+	background-color: #007bff;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.weather-submit:hover {
+	background-color: #0056b3;
+	transform: scale(1.05);
+}
+
+.weather-submit:disabled {
+	background-color: #cccccc;
+	cursor: not-allowed;
+}
+
+.weather-response-card {
+	padding: 20px;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.9);
+	width: fit-content;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	.weather-input {
+		width: 100%;
+	}
+	.weather-container {
+		padding: 10px;
+	}
+	.weather-form {
+		width: 100%;
+		padding: 10px;
+	}
+	.title {
+		font-size: 1.5rem;
+		padding: 5px 10px;
+	}
+}
