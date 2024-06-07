@@ -4,6 +4,8 @@ Welcome to the King County Weather Predictor project! This application predicts 
 
 ![image](https://github.com/meowOtter/king-county-weather-predictor/assets/151581090/6e2090d6-25ba-46e8-984e-3aa20764163f)
 
+![image](https://github.com/meowOtter/king-county-weather-predictor/assets/151581090/e3efb6bc-a43b-41de-8c3e-2e86794da86e)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
