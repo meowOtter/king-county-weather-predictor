@@ -36,7 +36,7 @@ function App() {
 			}
 
 			const responseBody = await response.json();
-			setTemp({ maxTemp: responseBody.maxTemp });
+			setTemp(responseBody);
 		} catch (error) {
 			console.error("Error fetching temperature:", error);
 			setTemp(null);
