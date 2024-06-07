@@ -3,13 +3,8 @@ import "./App.css";
 
 function App() {
 	const [date, setDate] = useState("");
-	const [minTemp, setMinTemp] = useState("");
 	const [temp, setTemp] = useState(null);
 	const [loading, setLoading] = useState(false);
-
-	const handleMinTempChange = (event) => {
-		setMinTemp(event.target.value);
-	};
 
 	const handleDateChange = (event) => {
 		setDate(event.target.value);
@@ -19,19 +14,12 @@ function App() {
 		event.preventDefault();
 		setLoading(true);
 		try {
-			const minTempFloat = parseFloat(minTemp);
-
-			if (isNaN(minTempFloat)) {
-				console.log("minTemFloat", minTempFloat);
-				throw new Error("Invalid temperature input");
-			}
-
 			if (!date) {
 				throw new Error("Invalid date input");
 			}
 
 			const [year, month, day] = date.split("-");
-			const csvData = `${minTempFloat},${year},${month},${day}`;
+			const csvData = `${year},${month},${day}`;
 			const response = await fetch(
 				"http://localhost:3001/predict-temperature",
 				{
@@ -58,9 +46,7 @@ function App() {
 
 	return (
 		<div className="weather-container">
-			<h1 className="title">
-				Predict Maximum Temperature in King County
-			</h1>
+			<h1 className="title">Predict Temperature in King County</h1>
 			<form className="weather-form" onSubmit={handleSubmit}>
 				<input
 					className="weather-input"
@@ -69,24 +55,19 @@ function App() {
 					onChange={handleDateChange}
 					placeholder="Enter date (e.g., 2025-01-01)"
 				/>
-				<input
-					className="weather-input"
-					type="number"
-					value={minTemp}
-					onChange={handleMinTempChange}
-					placeholder="Enter min temperature (F)"
-				/>
 				<button
 					className="weather-submit"
 					type="submit"
 					disabled={loading}
 				>
-					{loading ? "Loading..." : "Get max temperature"}
+					{loading ? "Loading..." : "Get temperature breakdown"}
 				</button>
 			</form>
 
 			{temp && (
 				<div className="weather-response-card">
+					<p>Average Temperature: {temp.avgTemp}F</p>
+					<p>Min Temperature: {temp.minTemp}F</p>
 					<p>Max Temperature: {temp.maxTemp}F</p>
 				</div>
 			)}

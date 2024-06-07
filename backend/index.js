@@ -26,8 +26,12 @@ app.post("/predict-temperature", async (req, res) => {
 	try {
 		const { Body } = await sagemakerRuntime.invokeEndpoint(params);
 		const responseBody = Buffer.from(Body).toString("utf-8").trim();
-		const predictedValue = responseBody.split(",")[0];
-		res.json({ maxTemp: predictedValue });
+		const [maxTemp, minTemp, avgTemp] = responseBody.split(",");
+		if (maxTemp && minTemp && avgTemp) {
+			res.json({ maxTemp, minTemp, avgTemp });
+		} else {
+			throw new Error("Incomplete response from SageMaker endpoint");
+		}
 	} catch (error) {
 		console.error("Error invoking SageMaker endpoint:", error);
 		res.status(500).send("Error predicting temperature");
