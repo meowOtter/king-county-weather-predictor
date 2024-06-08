@@ -5,6 +5,7 @@ function App() {
 	const [date, setDate] = useState("");
 	const [temp, setTemp] = useState(null);
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(""); // New state for error message
 
 	const handleDateChange = (event) => {
 		setDate(event.target.value);
@@ -13,6 +14,7 @@ function App() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		setLoading(true);
+		setError(""); // Reset error message before new request
 		try {
 			if (!date) {
 				throw new Error("Invalid date input");
@@ -39,6 +41,7 @@ function App() {
 			setTemp(responseBody);
 		} catch (error) {
 			console.error("Error fetching temperature:", error);
+			setError(error.message); // Set error message
 			setTemp(null);
 		}
 		setLoading(false);
@@ -63,7 +66,8 @@ function App() {
 					{loading ? "Loading..." : "Get temperature breakdown"}
 				</button>
 			</form>
-
+			{error && <p className="error-message">{error}</p>}{" "}
+			{/* Display error message */}
 			{temp && (
 				<div className="weather-response-card">
 					<p>Average Temperature: {temp.avgTemp}F</p>
