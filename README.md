@@ -1,8 +1,6 @@
 # King County Weather Predictor
 
-![image](https://github.com/meowOtter/king-county-weather-predictor/assets/151581090/6e2090d6-25ba-46e8-984e-3aa20764163f)
-
-![image](https://github.com/meowOtter/king-county-weather-predictor/assets/151581090/e3efb6bc-a43b-41de-8c3e-2e86794da86e)
+![king-county-weather-predictor-demo-ezgif com-video-to-gif-converter](https://github.com/meowOtter/king-county-weather-predictor/assets/151581090/d9e675c9-0210-4d11-b84d-5fc459112cd0)
 
 ## Table of Contents
 
