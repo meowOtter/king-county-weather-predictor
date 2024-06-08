@@ -66,7 +66,7 @@ function App() {
 					{loading ? "Loading..." : "Get temperature breakdown"}
 				</button>
 			</form>
-			{error && <p className="error-message">{error}</p>}{" "}
+			{error && <p className="error-message">{error}</p>}
 			{/* Display error message */}
 			{temp && (
 				<div className="weather-response-card">
